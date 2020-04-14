@@ -13,5 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
         int ss = 1000;
         String tt= "호잇";
+        char c = 'a';
+        short s = 200;
     }
 }
