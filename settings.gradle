@@ -1,0 +1,3 @@
+rootProject.name='AndroidWork'
+include ':A001_hello'
+include ':A002_layout'
