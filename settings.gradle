@@ -1,3 +1,5 @@
 rootProject.name='AndroidWork'
 include ':A001_hello'
 include ':A002_layout'
+include ':A003_listener'
+include ':A004_widget'
