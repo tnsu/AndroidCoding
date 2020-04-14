@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import java.util.StringTokenizer;
 
@@ -43,7 +42,7 @@ public class Main2Activity extends AppCompatActivity {
 
        class MyNum implements View.OnClickListener{
            String num2;
-           int total;
+           float total;
             public MyNum(){};
            public MyNum(String num2){this.num2 = num2;}
            @Override
@@ -53,8 +52,8 @@ public class Main2Activity extends AppCompatActivity {
                String tot = "";
                tot += num2;
 
-               etV.setText(etV.getText().append(tot));
-               etText.setText(etText.getText().append(num));
+               etV.setText(etV.getText().append(tot)); // 보이지 않는 값 (/*+-)
+               etText.setText(etText.getText().append(num)); //화면에 보여지는 값
                Log.d("myapp",  num+" 버튼이 클릭되었습니다.");
                Log.d("myapp",  str4+" 입니다.");
                if(num2 == "=") {
@@ -65,11 +64,13 @@ public class Main2Activity extends AppCompatActivity {
                        for (int i = 0;i<m.length;i++) {
                            tot = token.nextToken();
                            m[i] = tot;
-                           Log.d("dd",m[i]);
+                           Log.d("dd",m[i]); // 값이 제대로 나오고 있나 확인
                        }
                    }
-                    int in1 = Integer.parseInt(m[0]);
-                    int in2 = Integer.parseInt(m[2]);
+/*
+// 1. 두개의 피연산자와 하나의 연산자로만 계산가능
+                    float in1 = Float.parseFloat(m[0]);
+                    float in2 = Float.parseFloat(m[2]);
                    switch(m[1]){
                        case "+": total =in1 + in2; break;
                        case "-": total =in1 - in2; break;
@@ -78,6 +79,30 @@ public class Main2Activity extends AppCompatActivity {
 //                       case "*": etText.setText(in1 * in2); break;
 //                       case "*": total = in1 * in2; break;
                    }
+*/
+
+//2. 여러개의 연산이 가능하긴하나 순서대로 계산해 *,/ 연산이 먼저 계산되지 않음
+// 연산의 합이 -가 나오기도 하지만 음수의 계산이 되지 않음
+                   for (int i = 0; i< m.length; i++) {
+                      // if(m[i] == "+"||m[i] == "-"||m[i] == "/"||m[i] == "*"){
+                           switch (m[i]) {
+                               case "+":
+                                   m[i+1] = String.valueOf(Float.parseFloat(m[i - 1]) + Float.parseFloat(m[i + 1]));
+                                   break;
+                               case "-":
+                                   m[i+1] = String.valueOf(Float.parseFloat(m[i - 1]) - Float.parseFloat(m[i + 1]));
+                                   break;
+                               case "/":
+                                   m[i+1] = String.valueOf(Float.parseFloat(m[i - 1]) / Float.parseFloat(m[i + 1]));
+                                   break;
+                               case "*":
+                                   m[i+1] = String.valueOf(Float.parseFloat(m[i - 1]) * Float.parseFloat(m[i + 1]));
+                                   break;
+                           }
+                       total = Float.parseFloat(m[m.length-1]);
+                   }
+
+
                  etText.setText(total+"");
                    etV.setText(total+"");
                }
@@ -110,26 +135,4 @@ public class Main2Activity extends AppCompatActivity {
        });
     }
 }
-//        class Operator implements View.OnClickListener{
-//            String oper;
-//            int total;
-//            public Operator(String oper){this.oper = oper;}
-//            @Override
-//            public void onClick(View v) {
-//                int num1 = Integer.parseInt(etText.getText().toString());
-//                if(oper == "+"){
-//                    total += num1 ;
-//                    etText.setText(etText.getText().append(oper));
-//                }
-//                if(oper == "="){
-//                    etText.setText(total + num1);
-//                }
-//                Log.d("myapp",  num1 +" 버튼이 클릭되었습니다.");
-//                Log.d("myapp", total+" 입니다.");
-////                switch (oper){
-////                    case "+": total+= num1; break;
-////                    case "-": total-= num1;
-////                }
-//
-//            }
-//        }
+
