@@ -101,8 +101,6 @@ public class Main2Activity extends AppCompatActivity {
                            }
                        total = Float.parseFloat(m[m.length-1]);
                    }
-
-
                  etText.setText(total+"");
                    etV.setText(total+"");
                }
