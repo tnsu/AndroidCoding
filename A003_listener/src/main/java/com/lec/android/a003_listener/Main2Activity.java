@@ -69,6 +69,7 @@ public class Main2Activity extends AppCompatActivity {
                    }
 /*
 // 1. 두개의 피연산자와 하나의 연산자로만 계산가능
+
                     float in1 = Float.parseFloat(m[0]);
                     float in2 = Float.parseFloat(m[2]);
                    switch(m[1]){
