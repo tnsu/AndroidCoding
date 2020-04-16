@@ -17,6 +17,9 @@ public class Main3Activity extends AppCompatActivity {
     int add = 2;
 
     Handler handler = new Handler();
+
+    boolean isTracking = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,15 +38,17 @@ public class Main3Activity extends AppCompatActivity {
                 tvResult.setText("onProgressChanged: " + progress + "(" + fromUser + ")");
             }
 
-            //Tracking 시작될때
+            //Tracking 시작될때 콜백
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
                 Toast.makeText(getApplicationContext(), "Tracking 시작", Toast.LENGTH_SHORT).show();
+                isTracking = true;
             }
-            //Tracking 끝날때
+            //Tracking 끝날때 콜백
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
                 Toast.makeText(getApplicationContext(), "Tracking 종료", Toast.LENGTH_SHORT).show();
+                isTracking = false;
             }
         });
 
@@ -53,21 +58,23 @@ public class Main3Activity extends AppCompatActivity {
             public void run() {
                 int max = seekbar.getMax();
 
-                while (true){
-                    value = seekbar.getProgress() + add;
-                    if(value > max || value < 0){
-                        add = -add;
-                    }
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            seekbar.setProgress(value);
+                while (true) {
+                    if (!isTracking) { //트레킹 중이 아닐때만 Seekbar 이동
+                        value = seekbar.getProgress() + add;
+                        if (value > max || value < 0) {
+                            add = -add;
                         }
-                    });
-                    try {
-                        Thread.sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                seekbar.setProgress(value);
+                            }
+                        });
+                        try {
+                            Thread.sleep(100);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }

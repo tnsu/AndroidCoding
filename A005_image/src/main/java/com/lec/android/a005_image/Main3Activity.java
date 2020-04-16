@@ -43,7 +43,7 @@ public class Main3Activity extends AppCompatActivity {
     // 이미지 경로 알아내기 ( 제조사 모델마다 다를 수 있음)
     // 픽셀폰  : 이미지보기 -> 하단의 i버튼
     // 삼성폰 : 갤러리 이미지 롱클릭 후 상세정보.
-    private String imagePath = "../sdcard/DCIM/Camera/saudi_arabia.png";
+    private String imagePath = "/sdcard/DCIM/Camera/saudi_arabia.png";
 
     private final int PERMISSION_REQUSET_CODE = 101; // 권한 요청 코드값 (int)
     private final String [] PERMISSIONS = {// 요청할 권한들을 String[] 로 준비
