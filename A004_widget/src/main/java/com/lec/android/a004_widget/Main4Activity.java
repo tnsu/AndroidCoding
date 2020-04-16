@@ -39,5 +39,16 @@ public class Main4Activity extends AppCompatActivity {
             }
         });
 
+        // 라디오버튼을 선택했을때도 위와 같은 동작하게 하기
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            // checkedId : 선택된 라디오버튼의 아이디
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                RadioButton rb = findViewById(checkedId);
+                tvResult.setText("결과  : " + rb.getText());
+
+            }
+        });
+
     }// end onCreate()
 }
