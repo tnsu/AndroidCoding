@@ -35,8 +35,7 @@ public class Main2Activity extends AppCompatActivity {
                 String str1 = op1.getText().toString().trim();
                 String str2 = op2.getText().toString().trim();
                 int in1 = Integer.parseInt(str1) + Integer.parseInt(str2);
-                String result = String.format("%d",in1);
-                tvResult.setText(result);
+                tvResult.setText(""+in1);
                 Log.d("myspp",in1 + "입니다");
             }
         });
