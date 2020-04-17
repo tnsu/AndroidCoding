@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="134dp"
-        app:cardUseCompatPadding="true"
+        app:cardBackgroundColor="#C5CAE9"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
-        app:cardBackgroundColor="#C5CAE9">
+        app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="394dp"
+            android:layout_height="116dp">
 
             <TextView
                 android:id="@+id/tvName"

@@ -7,11 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:cardBackgroundColor="#D1C4E9"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
 
-        <TableRow
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -19,63 +23,110 @@
                 android:id="@+id/tvName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="이름 : " />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:text="이름 : "
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#4527A0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
                 android:id="@+id/etName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="173dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
                 android:ems="10"
+                android:hint="이름 입력"
                 android:inputType="textPersonName"
-                android:hint="이름 입력" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toEndOf="@+id/tvName"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tvAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="나이 :" />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="나이 : "
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#4527A0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
             <EditText
                 android:id="@+id/etAge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="178dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="4dp"
                 android:ems="10"
+                android:hint="나이 입력"
                 android:inputType="textPersonName"
-                android:hint="나이 입력" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toEndOf="@+id/tvAge"
+                app:layout_constraintTop_toBottomOf="@+id/etName" />
 
             <TextView
                 android:id="@+id/tvname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주소 : " />
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="주소 : "
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#4527A0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
             <EditText
                 android:id="@+id/etAdd"
+                android:layout_width="178dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="주소 입력"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:layout_constraintStart_toEndOf="@+id/tvname"
+                app:layout_constraintTop_toBottomOf="@+id/etAge" />
+
+            <RadioGroup
+                android:id="@+id/gr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="주소 입력"/>
-        </TableRow>
+                android:layout_marginStart="300dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    </TableLayout>
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="여자" />
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="남자" />
+            </RadioGroup>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="추가" />
+        android:backgroundTint="#EC799F"
+        android:text="추가"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //                etName.getText().toString();
 //                etAge.getText().toString();
 //                etAdd.getText().toString();
-                adapter.addItem(new PersonBook( etName.getText().toString(),etAge.getText().toString(), etAdd.getText().toString()));
+                adapter.addItem(new PersonBook(etName.getText().toString(),etAge.getText().toString(), etAdd.getText().toString()));
                 adapter.notifyDataSetChanged();
 
             }
@@ -47,10 +47,3 @@ public class MainActivity extends AppCompatActivity {
 
     }//end onCreate()
 }// end Activity
-
-//    private static int idx = 0;
-//
-//    public static int next(){  //데이터를 추가 삭제 시(무한반복 하기위해 , 샘플용이여서)
-//        idx = idx % FACEID.length;
-//        return idx++;    // idx 값 리턴하고 1 증가.
-//    }
