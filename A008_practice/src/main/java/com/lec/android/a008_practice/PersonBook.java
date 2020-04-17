@@ -6,13 +6,15 @@ public class PersonBook implements Serializable {
     String name;
     String age;
     String address;
+    String nn;
 
     public PersonBook() {}
 
-    public PersonBook(String name, String age, String address) {
+    public PersonBook(String name, String age, String address,String nn) {
         this.name = name;
         this.age = age;
         this.address = address;
+        this.nn = nn;
     }
 
     public String getName() {
@@ -37,5 +39,13 @@ public class PersonBook implements Serializable {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getNn() {
+        return nn;
+    }
+
+    public void setNn(String nn) {
+        this.nn = nn;
     }
 }

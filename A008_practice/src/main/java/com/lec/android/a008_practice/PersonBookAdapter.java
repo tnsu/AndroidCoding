@@ -40,7 +40,7 @@ public class PersonBookAdapter extends RecyclerView.Adapter<PersonBookAdapter.Vi
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView tvName, tvAge, tvAddress;
+        TextView tvName, tvAge, tvAddress, tvGend;
         ImageButton btnDelete;
 
         public ViewHolder(@NonNull View itemView) {
@@ -50,6 +50,7 @@ public class PersonBookAdapter extends RecyclerView.Adapter<PersonBookAdapter.Vi
             tvName = itemView.findViewById(R.id.tvName);
             tvAge = itemView.findViewById(R.id.tvAge);
             tvAddress = itemView.findViewById(R.id.tvAddre);
+            tvGend = itemView.findViewById(R.id.tvGend);
 
 
             btnDelete = itemView.findViewById(R.id.btnDelete);
@@ -68,6 +69,7 @@ public class PersonBookAdapter extends RecyclerView.Adapter<PersonBookAdapter.Vi
             tvName.setText(item.getName());
             tvAge.setText(item.getAge());
             tvAddress.setText(item.getAddress());
+            tvGend.setText(item.getNn());
         }
     }
     public void addItem(PersonBook item) {  items.add(item); }

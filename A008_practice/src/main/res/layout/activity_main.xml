@@ -96,10 +96,10 @@
 
             <RadioGroup
                 android:id="@+id/gr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="300dp"
-                android:layout_marginTop="30dp"
+                android:layout_width="77dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="280dp"
+                android:layout_marginTop="50dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -107,13 +107,18 @@
                     android:id="@+id/radioButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="여자" />
+                    android:text="여자"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#4527A0"
+                    android:checked="true"/>
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="남자" />
+                    android:text="남자"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#4527A0" />
             </RadioGroup>
 
         </androidx.constraintlayout.widget.ConstraintLayout>

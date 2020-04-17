@@ -8,11 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 public class MainActivity extends AppCompatActivity {
      PersonBookAdapter adapter;
      RecyclerView rv;
      EditText etName, etAge, etAdd;
+     RadioGroup rg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
         etAdd = findViewById(R.id.etAdd);
+        rg = findViewById(R.id.gr);
 
         rv = findViewById(R.id.rv);
 
@@ -38,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
 //                etName.getText().toString();
 //                etAge.getText().toString();
 //                etAdd.getText().toString();
-                adapter.addItem(new PersonBook(etName.getText().toString(),etAge.getText().toString(), etAdd.getText().toString()));
+                int id = rg.getCheckedRadioButtonId();
+                RadioButton rb = findViewById(id);
+                adapter.addItem(new PersonBook(etName.getText().toString(),etAge.getText().toString(), etAdd.getText().toString(), rb.getText().toString()));
                 adapter.notifyDataSetChanged();
 
             }
