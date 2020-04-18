@@ -8,15 +8,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        app:cardBackgroundColor="#C5CAE9"
+        android:layout_height="180dp"
+        app:cardBackgroundColor="#9FA8DA"
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="394dp"
-            android:layout_height="match_parent">
+            android:layout_height="180dp">
 
             <TextView
                 android:id="@+id/tvName"
@@ -24,6 +24,7 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="28dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toEndOf="@+id/tvNa"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,6 +36,7 @@
                 android:layout_marginTop="28dp"
                 android:text="나이 : "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,6 +46,7 @@
                 android:layout_height="25dp"
                 android:layout_marginTop="28dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toEndOf="@+id/tvage"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,6 +58,7 @@
                 android:layout_marginTop="28dp"
                 android:text="이름 : "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,6 +70,7 @@
                 android:layout_marginTop="16dp"
                 android:text="주소 : "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvNa"
@@ -77,6 +82,7 @@
                 android:layout_height="24dp"
                 android:layout_marginTop="16dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tvA"
                 app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -90,6 +96,7 @@
                 android:layout_marginTop="16dp"
                 android:text="성별 : "
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvA" />
 
@@ -99,6 +106,7 @@
                 android:layout_height="26dp"
                 android:layout_marginTop="16dp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#FFFFFF"
                 app:layout_constraintStart_toEndOf="@+id/tvG"
                 app:layout_constraintTop_toBottomOf="@+id/tvAddre" />
 
