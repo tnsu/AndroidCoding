@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Message;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 // Value1
@@ -34,7 +35,7 @@ public class Main4Activity extends AppCompatActivity {
         tvResult5 = findViewById(R.id.tvResult5);
 
         // 방법 #1 핸들러 객체를 외부에서 생성
-        mHandler1.sendEmptyMessage(0); // 앱 시작과 동시에 핸들러에 메세지 전달
+        mHandler1.sendEmptyMessage(0); // 앱 시작과 동시에 핸들러에 메세지 전달(호출)
 
         // 방법 #2 handler.postDelayed() 사용
         mHandler2 = new Handler();
@@ -98,7 +99,8 @@ public class Main4Activity extends AppCompatActivity {
             tvResult1.setText("Value1 = " + value1);
 
             if(value1 < 10){
-                // 메세지를 처리하고 또다시 핸들러에 메세지 전달 (1000ms 지연)
+                // 메세지를 처리하고 또 다시 핸들러에 메세지 전달 (1000ms 지연)
+                // 그 객체의 메소드로 가게됨 mHandler.
                 mHandler1.sendEmptyMessageDelayed(0,1000);
                 // 첫번째 매개변수는 message 값
                 // 두번째 매개변수는 millisec
