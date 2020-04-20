@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /** Handler
  *  자바는 자바가상머신 위에서 자체적으로 스레드를 생성하고 운영하긴 하지만,
