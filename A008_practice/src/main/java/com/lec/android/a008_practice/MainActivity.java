@@ -10,7 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
+//  받는거 자체를 number 타입으로 받으면 에러가 안난다.
+// 나이 이기 때문에.. String 으로 하지 않고 하려면!
 public class MainActivity extends AppCompatActivity {
      PersonBookAdapter adapter;
      RecyclerView rv;
