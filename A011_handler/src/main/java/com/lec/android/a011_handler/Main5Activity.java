@@ -17,7 +17,7 @@ import android.widget.TextView;
  *    AsyncTask 의 메소드
  *      onPreExecute() : 백그라운드 작업 시작하기 전에 호출
  *      doInBackground() : 백그라운드 작업, 시간이 많이 걸리는 '통신' 작업이나 복잡한 연산 작업등을 (비동기로)수행케 해야 한다.
- *      onProgressUpdate() : 백그라운즈 작업 도중 (여러번) 호출가능, 중간중간에 UI업데이트시 사용 가능!
+ *      onProgressUpdate() : 백그라운드 작업 도중 (여러번) 호출가능, 중간중간에 UI업데이트시 사용 가능!
  *      onPostExecute() : doInBackground() 완료되면 호출
  *
  *    AsyncTask<Params, Progress, Result>
@@ -45,6 +45,7 @@ public class Main5Activity extends AppCompatActivity {
         tvMainValue = findViewById(R.id.tvMainValue);
         tvBackValue1 = findViewById(R.id.tvBackValue1);
         tvBackValue2 = findViewById(R.id.tvBackValue2);
+
         Log.d("myapp","PRE!!");
         BackgroundTask backgroundTask = new BackgroundTask();
         backgroundTask.execute(100);
@@ -56,9 +57,9 @@ public class Main5Activity extends AppCompatActivity {
     }// end onCreate
 
     // AsyncTask<Params, Progress, Result>
-//      Params: doItBackground 에서 사용할 변수 타입
-//      Progress: onProgress 에서 사용할 변수의 타입
-//      Result : onPostExecute 에서 사용할 변수의 타입
+//      Params(파라미터: doItBackground 에서 사용할 변수 타입
+//      Progress(진행사항: onProgress 에서 사용할 변수의 타입
+//      Result(결과 : onPostExecute 에서 사용할 변수의 타입
 
 
     class BackgroundTask extends AsyncTask<Integer, Integer, Integer>{
