@@ -34,7 +34,7 @@ public class Start extends AppCompatActivity implements View.OnClickListener {
     ImageView[] iv = new ImageView[8];
 
     private Vibrator vibrator;  // 진동
-    private SoundPool soundPool;  // 음향
+    private SoundPool soundPool;  // 음향,
 
     private int soundID_OK; // 음향 id: 블럭에 맞추었을 때
     private int soundID_Error; // 음향 id : 블럭 못 맞췄을 때
