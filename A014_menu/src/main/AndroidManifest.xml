@@ -10,20 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Main5Activity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Main4Activity"
             android:label="Main">
 
         </activity>
-        <activity android:name=".Main3Activity" />
+        <activity android:name=".Main3Activity" >
+
+        </activity>
         <activity android:name=".Main2Activity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--
             UP Navigation 작동을 위한 액티비티 설정
             4.1 이상; <activity> 에 android:parentActivityName 를 적용
