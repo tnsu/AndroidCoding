@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -65,6 +66,8 @@ public class Main2Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+
+        this.setRequestedOrientation((ActivityInfo.SCREEN_ORIENTATION_PORTRAIT));// 세로모드로 고정 (테스트를 위해)
 
         tvResult = findViewById(R.id.tvResult);
         btnLocate = findViewById(R.id.btnLocate);
